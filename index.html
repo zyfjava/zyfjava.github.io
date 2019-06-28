@@ -384,10 +384,41 @@ mybatis的项目整体结构见下图：
 designer),此处需要注意流程图绘制完成后打开Eclipse中Windows-&gt;preference-
 &gt;activiti-&gt;Save Action并勾选第一项，配置完成后再保存.bpmn文件就会自动生成一个
 和文件同名的.png文件，流程图绘制如下:
-</code></pre><p><img src="https://note.youdao.com/yws/api/personal/file/6D0D0CF346734373B024AC3B194E9223?method=download&amp;shareKey=14ca35a6e45f4733478f375fba8b12e2" alt="Activiti流程图"><br>      由于流程中每个任务的代理人不确定，因此本流程图的代理人选用了配置任务节点变量的方<br>    式，此方式需要在完成每个任务之间由流程变量指定任务代理人,Activiti指定代理人有三种<br>    方式,详细请见)，具体的开发代码会在进行之后进行展<br><a href="https://www.2cto.com/kf/201702/538540.html" target="_blank" rel="noopener">个人任务的三种指派方式</a><br>    示，流程图的代理人配置见下图:<br><img src="https://note.youdao.com/yws/api/personal/file/AB9C8A075DBA49D4877EE869381BE492?method=download&amp;shareKey=e83b59ec1e4e24611d3f5c1a93c175e8" alt="电话费申请任务" title="电话费申请"><br>      电话费申请代理人配置<br><img src="https://note.youdao.com/yws/api/personal/file/EC524C5D7E4E40A9ABDCD1E771893E3C?method=download&amp;shareKey=ca083e5e9a002dad299ad2e85a2e501f" alt="部门经理审批任务" title="部门经理审批"><br>      部门经理审批代理人配置<br><img src="https://note.youdao.com/yws/api/personal/file/95F082C563864177B45B7CA7F44D05FE?method=download&amp;shareKey=9ff4a6edd815f3ea05c328130b4a2541" alt="公司副总审批" title="公司副总审批"><br>      公司副总审批代理人配置<br><img src="https://note.youdao.com/yws/api/personal/file/9D61EA2897DC497F9C0717F4C59DA9CF?method=download&amp;shareKey=688fbab26337996db68467d85ff47c8b" alt="董事长审批代理人配置" title="董事长审批"><br>      董事长审批代理人配置<br>      任务之间排它网关的分支决定了任务的走向，因此我的具体设定为当submit为y时代表通<br>    过，当为n时代表取消或者驳回，具体配置如下图:<br><img src="https://note.youdao.com/yws/api/personal/file/C7D9555BA5D6404DAB143CE19B4CA052?method=download&amp;shareKey=098d7685ae211772401b76dad00095fa" alt="通过"><br><img src="https://note.youdao.com/yws/api/personal/file/904AF52D57654E22A9486083C02F0EB0?method=download&amp;shareKey=3864cb37672c5d0f497937cd858b2293" alt="驳回"></p>
-<h1 id="u56DB_u3001_u5177_u4F53_u4EE3_u7801_u5B9E_u73B0"><a href="#u56DB_u3001_u5177_u4F53_u4EE3_u7801_u5B9E_u73B0" class="headerlink" title="四、具体代码实现"></a>四、具体代码实现</h1><pre><code>  使用Activiti首先需要使用activiti接口服务组件需要先创建流程引擎，之后再根据创
-建的流程引擎来得到具体的接口。
-</code></pre>
+</code></pre><p><img src="https://note.youdao.com/yws/api/personal/file/6D0D0CF346734373B024AC3B194E9223?method=download&amp;shareKey=14ca35a6e45f4733478f375fba8b12e2" alt="Activiti流程图"><br>      由于流程中每个任务的代理人不确定，因此本流程图的代理人选用了配置任务节点变量的方<br>    式，此方式需要在完成每个任务之间由流程变量指定任务代理人,Activiti指定代理人有三种<br>    方式,详细请见<br><a href="https://www.2cto.com/kf/201702/538540.html" target="_blank" rel="noopener">个人任务的三种指派方式</a><br>    具体的开发代码会在进行之后进行展示，流程图的代理人配置见下图:</p>
+<p><img src="https://note.youdao.com/yws/api/personal/file/AB9C8A075DBA49D4877EE869381BE492?method=download&amp;shareKey=e83b59ec1e4e24611d3f5c1a93c175e8" alt="电话费申请任务" title="电话费申请"><br>电话费申请代理人配置</p>
+<p><img src="https://note.youdao.com/yws/api/personal/file/EC524C5D7E4E40A9ABDCD1E771893E3C?method=download&amp;shareKey=ca083e5e9a002dad299ad2e85a2e501f" alt="部门经理审批任务" title="部门经理审批"><br>部门经理审批代理人配置</p>
+<p><img src="https://note.youdao.com/yws/api/personal/file/95F082C563864177B45B7CA7F44D05FE?method=download&amp;shareKey=9ff4a6edd815f3ea05c328130b4a2541" alt="公司副总审批" title="公司副总审批"><br>公司副总审批代理人配置</p>
+<p><img src="https://note.youdao.com/yws/api/personal/file/9D61EA2897DC497F9C0717F4C59DA9CF?method=download&amp;shareKey=688fbab26337996db68467d85ff47c8b" alt="董事长审批代理人配置" title="董事长审批"><br>董事长审批代理人配置<br>      任务之间排它网关的分支决定了任务的走向，因此我的具体设定为当submit为y时代表通<br>    过，当为n时代表取消或者驳回，具体配置如下图:<br><img src="https://note.youdao.com/yws/api/personal/file/C7D9555BA5D6404DAB143CE19B4CA052?method=download&amp;shareKey=098d7685ae211772401b76dad00095fa" alt="通过"><br><img src="https://note.youdao.com/yws/api/personal/file/904AF52D57654E22A9486083C02F0EB0?method=download&amp;shareKey=3864cb37672c5d0f497937cd858b2293" alt="驳回"></p>
+<h1 id="u56DB_u3001_u5177_u4F53_u4EE3_u7801_u5B9E_u73B0"><a href="#u56DB_u3001_u5177_u4F53_u4EE3_u7801_u5B9E_u73B0" class="headerlink" title="四、具体代码实现"></a>四、具体代码实现</h1><blockquote>
+<p>使用Activiti首先需要使用activiti接口服务组件需要先创建流程引擎，之后再根据创<br>    建的流程引擎来得到具体的接口，具体代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//创建流程引擎</span><br><span class="line">private ProcessEngine engine = ProcessEngines.getDefaultProcessEngine();</span><br><span class="line">//得到流程存储服务组件</span><br><span class="line">private RepositoryService repositoryService = engine.getRepositoryService();</span><br><span class="line">//得到运行时服务组件</span><br><span class="line">private RuntimeService runtimeService = engine.getRuntimeService();</span><br><span class="line">//得到任务服务组件</span><br><span class="line">private TaskService taskService = engine.getTaskService();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>1.部署流程
+    首先编写流程部署方法，使用使用流程存储服务组件(RepositoryService)
+  将需要使用的流程文件和流程图部署到Activiti数据库的act_ge_bytearray表中
+  具体代码如下:
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">  * 流程部署方法</span><br><span class="line">  */</span><br><span class="line">public void deployProcess() &#123;</span><br><span class="line">	//部署流程文件</span><br><span class="line">	repositoryService.createDeployment()</span><br><span class="line">					.name(&quot;电话费申请流程&quot;)</span><br><span class="line">					//部署流程描述文件</span><br><span class="line">					.addClasspathResource(&quot;processes/OrderFlow.bpmn&quot;)</span><br><span class="line">                    //部署流程图</span><br><span class="line">					.addClasspathResource(&quot;processes/OrderFlow.png&quot;)	</span><br><span class="line">					.deploy();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>2.开启流程并完成第一个任务
+    首先使用运行时服务组件(RuntimeService)来根据流程定义的key(流程描述文件
+  中process的id属性)来开启流程，并传入一个参数用来指定流程开启后第一个任务的代
+  理人，之后会返回一个流程实例;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ProcessInstance   pi = </span><br><span class="line">runtimeService.startProcessInstanceByKey(&quot;LeaveProcess&quot;,type1);</span><br></pre></td></tr></table></figure>
+<pre><code>之后使用任务服务组件TaskService进程实例id来得到当前任务;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Task   task   = taskService.createTaskQuery().processInstanceId(pi.getId()).singleResult();</span><br></pre></td></tr></table></figure>
+<pre><code>  最后通过刚拿到的任务ID并传入分支走向(submit为y或者为n)和下一步的代理人三
+个参数(三个参数放入Map集合中)来提交当前任务(电话费申请任务)。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type.put(&quot;submitType&quot;, submitType);	   //分支走向:y代表同意请求，n代表驳回请求</span><br><span class="line">type.put(&quot;username&quot;,peopleName);	   //注意，此处的submitType手动指定下一个流程（部门经理审批）的代理人</span><br><span class="line">taskService.complete(task.getId(),type);</span><br></pre></td></tr></table></figure>
+<pre><code>3.后续任务的完成
+    后续的任务与第一个任务(电话费任务)的完成方法一样，需要先根据进程实例ID来获
+  得当前任务，并根据任务ID以及传入的分支走向、下一个任务的代理人(流程的最后一个
+  任务不用)来提交当前任务。注:流程的后续任务可以根据自己的实际业务需求加入一些
+  定时事件（定时中间事件、定时边界时间、定时开始事件等）。
+4.数据库信息的存储
+    因为本例子是使用的自己设计的数据库进行存储数据，因此需要编写mapper来进行数
+  据操作，具体代码略。
+</code></pre><h1 id="u4E94_u3001_u7ED3_u8BED"><a href="#u4E94_u3001_u7ED3_u8BED" class="headerlink" title="五、结语"></a>五、结语</h1><pre><code>  这个例子是我对Activiti6.0的一个简单实践，写的不是很成熟，部分地方写的或有遗
+漏，敬请指正。
+</code></pre><h1 id="u611F_u8C22"><a href="#u611F_u8C22" class="headerlink" title="感谢"></a>感谢</h1><p><a href="https://blog.csdn.net/JJBOOM425/article/details/85015145" target="_blank" rel="noopener">Activiti6.0流程引擎学习</a><br><a href="https://www.2cto.com/kf/201702/538540.html" target="_blank" rel="noopener">Activiti个人任务(三种指派方式)</a><br><a href="https://blog.csdn.net/ZYC88888/article/details/82813456" target="_blank" rel="noopener">Activiti6详细教程</a></p>
+
           
         
       
