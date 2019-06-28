@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="简介  我的第一个Activiti小例子是一个最常见的公司内部的电话费报销申请流程：需要报销的 员工申请报销后由员工所在部门的部门经理进行审批，通过后再交由管理本部门的公司副总进 行审批，通过后最后交由董事长进行审批，这其中除了普通员工可以取消订单申请结束流程之 外，其他的领导在驳回请求后都会返回到电话费申请任务，但是由于本例子未涉及到驳回在申 请的业务流程因此暂时只是理论阶段。（这个流程很简单，">
+<meta name="description" content="一、简介  我的第一个Activiti小例子是一个最常见的公司内部的电话费报销申请流程：需要报销的 员工申请报销后由员工所在部门的部门经理进行审批，通过后再交由管理本部门的公司副总进 行审批，通过后最后交由董事长进行审批，这其中除了普通员工可以取消订单申请结束流程之 外，其他的领导在驳回请求后都会返回到电话费申请任务，但是由于本例子未涉及到驳回在申 请的业务流程因此暂时只是理论阶段。（这个流程很简">
 <meta name="keywords" content="Activiti,springboot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初探Activiti 6.0">
 <meta property="og:url" content="http://yoursite.com/2019/06/27/hello-github/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="简介  我的第一个Activiti小例子是一个最常见的公司内部的电话费报销申请流程：需要报销的 员工申请报销后由员工所在部门的部门经理进行审批，通过后再交由管理本部门的公司副总进 行审批，通过后最后交由董事长进行审批，这其中除了普通员工可以取消订单申请结束流程之 外，其他的领导在驳回请求后都会返回到电话费申请任务，但是由于本例子未涉及到驳回在申 请的业务流程因此暂时只是理论阶段。（这个流程很简单，">
+<meta property="og:description" content="一、简介  我的第一个Activiti小例子是一个最常见的公司内部的电话费报销申请流程：需要报销的 员工申请报销后由员工所在部门的部门经理进行审批，通过后再交由管理本部门的公司副总进 行审批，通过后最后交由董事长进行审批，这其中除了普通员工可以取消订单申请结束流程之 外，其他的领导在驳回请求后都会返回到电话费申请任务，但是由于本例子未涉及到驳回在申 请的业务流程因此暂时只是理论阶段。（这个流程很简">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/ztjg.png">
-<meta property="og:updated_time" content="2019-06-28T03:29:49.757Z">
+<meta property="og:updated_time" content="2019-06-28T03:37:17.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探Activiti 6.0">
-<meta name="twitter:description" content="简介  我的第一个Activiti小例子是一个最常见的公司内部的电话费报销申请流程：需要报销的 员工申请报销后由员工所在部门的部门经理进行审批，通过后再交由管理本部门的公司副总进 行审批，通过后最后交由董事长进行审批，这其中除了普通员工可以取消订单申请结束流程之 外，其他的领导在驳回请求后都会返回到电话费申请任务，但是由于本例子未涉及到驳回在申 请的业务流程因此暂时只是理论阶段。（这个流程很简单，">
+<meta name="twitter:description" content="一、简介  我的第一个Activiti小例子是一个最常见的公司内部的电话费报销申请流程：需要报销的 员工申请报销后由员工所在部门的部门经理进行审批，通过后再交由管理本部门的公司副总进 行审批，通过后最后交由董事长进行审批，这其中除了普通员工可以取消订单申请结束流程之 外，其他的领导在驳回请求后都会返回到电话费申请任务，但是由于本例子未涉及到驳回在申 请的业务流程因此暂时只是理论阶段。（这个流程很简">
 <meta name="twitter:image" content="http://yoursite.com/img/ztjg.png">
 
 
@@ -364,7 +364,7 @@
       
 
       
-        <h1 id="u7B80_u4ECB"><a href="#u7B80_u4ECB" class="headerlink" title="简介"></a>简介</h1><pre><code>  我的第一个Activiti小例子是一个最常见的公司内部的电话费报销申请流程：需要报销的
+        <h1 id="u4E00_u3001_u7B80_u4ECB"><a href="#u4E00_u3001_u7B80_u4ECB" class="headerlink" title="一、简介"></a>一、简介</h1><pre><code>  我的第一个Activiti小例子是一个最常见的公司内部的电话费报销申请流程：需要报销的
 员工申请报销后由员工所在部门的部门经理进行审批，通过后再交由管理本部门的公司副总进
 行审批，通过后最后交由董事长进行审批，这其中除了普通员工可以取消订单申请结束流程之
 外，其他的领导在驳回请求后都会返回到电话费申请任务，但是由于本例子未涉及到驳回在申
@@ -376,7 +376,9 @@ mybatis的项目整体结构见下图：
 </code></pre><p><img src="/img/ztjg.png" alt="项目整体结构"></p>
 <pre><code>选用了Maven来进行jar包管理，pom中的具体代码如下:
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;2.0.1&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">		&lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.activiti&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;activiti-spring-boot-starter-basic&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;6.0.0.RC1&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-core&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;</span><br><span class="line">        &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.tomcat.embed&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;tomcat-embed-jasper&lt;/artifactId&gt;</span><br><span class="line">        &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">		&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
-
+<h1 id="u4E8C_u3001_u6570_u636E_u5E93_u5B57_u6BB5_u8BBE_u8BA1"><a href="#u4E8C_u3001_u6570_u636E_u5E93_u5B57_u6BB5_u8BBE_u8BA1" class="headerlink" title="二、数据库字段设计"></a>二、数据库字段设计</h1><pre><code>  本例子的数据存储采用了自己设计的数据库表:包括dept(部门表)、people(人员信
+息表)、person(申请流程人信息记录表)、user(员工角色权限表)
+</code></pre>
       
     </div>
     
@@ -548,7 +550,7 @@ mybatis的项目整体结构见下图：
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u7B80_u4ECB"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E00_u3001_u7B80_u4ECB"><span class="nav-number">1.</span> <span class="nav-text">一、简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E8C_u3001_u6570_u636E_u5E93_u5B57_u6BB5_u8BBE_u8BA1"><span class="nav-number">2.</span> <span class="nav-text">二、数据库字段设计</span></a></li></ol></div>
             
 
           </div>
