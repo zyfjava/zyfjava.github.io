@@ -571,6 +571,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zyfjava.github.io/SpringBoot-install-jar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zyf">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Zero">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/SpringBoot-install-jar/" itemprop="url">SpringBoot打jar包供其他项目使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-22T17:21:44+08:00">
+                2019-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这次因为需要所以需要将项目打成jar包发布在maven私服中并被其他项目引用（作为工具使用），因此首先先进行本地测试（将项目打成jar包并发布在本地maven仓库中）。</p>
+<h1 id="u5254_u9664_u4E0D_u9700_u8981_u6587_u4EF6"><a href="#u5254_u9664_u4E0D_u9700_u8981_u6587_u4EF6" class="headerlink" title="剔除不需要文件"></a>剔除不需要文件</h1><p>剔除application、applicationTest；application.properties、logback.xml（直接在需要引进该jar包的项目中配置）；<br>此处需要注意发布为jar包的项目内部的包名最好不要与主项目的包名一致（如com.test.controller等）有可能导致出错；部分依赖需要在也要在主项目的pom中引入，如工具jar包中含有Thymeleaf，则主项目因为需要使用也要引入依赖。</p>
+<h1 id="u6253_u5305"><a href="#u6253_u5305" class="headerlink" title="打包"></a>打包</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/SpringBoot-install-jar/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+	
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://zyfjava.github.io/java8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -902,7 +1053,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -924,7 +1075,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -995,7 +1146,7 @@ var _hmt = _hmt || [];
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.9k字</span>
+  <span class="post-count">博客全站共5.3k字</span>
 </div>
 
         

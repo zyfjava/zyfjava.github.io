@@ -1,3 +1,4 @@
+http://zyfjava.github.io/SpringBoot-install-jar/
 http://zyfjava.github.io/Swagger2/
 http://zyfjava.github.io/java8/
 http://zyfjava.github.io/POI/
