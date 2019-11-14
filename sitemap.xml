@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zyfjava.github.io/java8/</loc>
+    
+    <lastmod>2019-11-14T03:24:03.703Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zyfjava.github.io/on-java8/</loc>
+    
+    <lastmod>2019-10-12T07:23:10.375Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zyfjava.github.io/Swagger2/</loc>
     
     <lastmod>2019-09-23T03:30:25.530Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>http://zyfjava.github.io/categories/index.html</loc>
     
     <lastmod>2019-09-23T03:13:57.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zyfjava.github.io/java8/</loc>
-    
-    <lastmod>2019-07-04T03:33:58.920Z</lastmod>
     
   </url>
   

@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。Java8 新增了非常多的特性，我主要进行记录一下几个:Lambda 表达式、方法引用 、默认方法。">
+<meta name="description" content="Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。Java8 新增了非常多的特性，我主要进行记录以下几个:Lambda 表达式、方法引用 、默认方法。">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDK1.8新特性">
 <meta property="og:url" content="http://zyfjava.github.io/java8/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。Java8 新增了非常多的特性，我主要进行记录一下几个:Lambda 表达式、方法引用 、默认方法。">
+<meta property="og:description" content="Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。Java8 新增了非常多的特性，我主要进行记录以下几个:Lambda 表达式、方法引用 、默认方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-04T03:33:58.920Z">
+<meta property="og:updated_time" content="2019-11-14T03:24:03.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDK1.8新特性">
-<meta name="twitter:description" content="Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。Java8 新增了非常多的特性，我主要进行记录一下几个:Lambda 表达式、方法引用 、默认方法。">
+<meta name="twitter:description" content="Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。Java8 新增了非常多的特性，我主要进行记录以下几个:Lambda 表达式、方法引用 、默认方法。">
 
 
 
@@ -363,12 +363,13 @@
       
 
       
-        <p>Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。Java8 新增了非常多的特性，我主要进行记录一下几个:Lambda 表达式、方法引用 、默认方法。<br><a id="more"></a></p>
+        <p>Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。Java8 新增了非常多的特性，我主要进行记录以下几个:Lambda 表达式、方法引用 、默认方法。<br><a id="more"></a></p>
 <h1 id="u4E00_u3001_u65B0_u7279_u6027_u8BB2_u89E3"><a href="#u4E00_u3001_u65B0_u7279_u6027_u8BB2_u89E3" class="headerlink" title="一、新特性讲解"></a>一、新特性讲解</h1><h3 id="u63A5_u53E3_u7684_u9ED8_u8BA4_u65B9_u6CD5"><a href="#u63A5_u53E3_u7684_u9ED8_u8BA4_u65B9_u6CD5" class="headerlink" title="接口的默认方法"></a>接口的默认方法</h3><p>Java8允许我们给接口添加一个非抽象的方法实现，只需要使用default关键字，这个特征又叫扩展方法。示例如下（注意：Math.sqrt()是Math类的方法，为计算平方根）:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface Formula &#123;</span><br><span class="line">    double calculate(int a);</span><br><span class="line">    default double sqrt(int a) &#123;</span><br><span class="line">        return Math.sqrt(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <pre><code>此时实现Formula接口的子类需要实现一个calculate方法，默认方法sqrt可以直接使用，示例如下:
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Formula formula = new Formula() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public double calculate(int a) &#123;</span><br><span class="line">        return sqrt(a * 100);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="Lambda_u8868_u8FBE_u5F0F"><a href="#Lambda_u8868_u8FBE_u5F0F" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><p>Lambda表达式允许把函数作为一个方法的参数(函数作为参数传递进方法中)，使用Lambda表达式可以使代码变得更加紧凑，示例代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//在使用Lambda表达式以前的集合排序的写法</span><br><span class="line">List&lt;String&gt; names = Arrays.asList(&quot;peter&quot;, &quot;anna&quot;, &quot;mike&quot;, &quot;xenia&quot;);</span><br><span class="line">Collections.sort(names, new Comparator&lt;String&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(String a, String b) &#123;</span><br><span class="line">        return b.compareTo(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//在使用了Lambda表达式之后的排序写法</span><br><span class="line">Collections.sort(names, (String a, String b) -&gt; b.compareTo(a));</span><br><span class="line">//另外由于java编译器可以自动推导出参数类型，因此上面的代码可以按如下的方式写</span><br><span class="line">Collections.sort(names, (a, b) -&gt; b.compareTo(a));</span><br><span class="line">//names代表要传入进行排序的list集合</span><br><span class="line">//括号中的a,b代表每次传进的两个集合数据</span><br><span class="line">//此处注意是相当于用Lambda表达式简写了,相当于用-&gt;的方式代表了匿名内部类</span><br></pre></td></tr></table></figure></p>
-<h3 id="u51FD_u6570_u5F0F_u63A5_u53E3"><a href="#u51FD_u6570_u5F0F_u63A5_u53E3" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>每一个Lambda表达式都对应一个类型，通常是接口类型。而函数式接口是指仅仅只包含一个抽象方法的接口，每一个该类型的lambda表达式都会匹配到这个抽象方法。<br><br>我们可以将Lambda表达式当做只包含一个抽象方法的接口类型，但是需要给接口添加<font color="#FF0000">@FunctionalInterface注解</font>，但是需要注意<font color="#FF0000">加了此注解的接口只能含有一个抽象方法（否则会报错）</font>，默认方法可以添加，具体示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@FunctionalInterface</span><br><span class="line">interface Converter&lt;F, T&gt; &#123;</span><br><span class="line">    T convert(F from);</span><br><span class="line">&#125;</span><br><span class="line">Converter&lt;String, Integer&gt; converter = (from) -&gt; Integer.valueOf(from);</span><br><span class="line">Integer converted = converter.convert(&quot;123&quot;);</span><br><span class="line">System.out.println(converted);    // 123</span><br></pre></td></tr></table></figure></p>
+<h3 id="u51FD_u6570_u5F0F_u63A5_u53E3"><a href="#u51FD_u6570_u5F0F_u63A5_u53E3" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>每一个Lambda表达式都对应一个类型，通常是接口类型。而函数式接口是指仅仅只包含一个抽象方法的接口，每一个该类型的lambda表达式都会匹配到这个抽象方法。<br><br>我们可以将Lambda表达式当做只包含一个抽象方法的接口类型，但是需要给接口添加<font color="#FF0000">@FunctionalInterface注解</font>，但是需要注意<font color="#FF0000">加了此注解的接口只能含有一个抽象方法（否则会报错）</font>，默认方法可以添加，具体示例如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@FunctionalInterface</span><br><span class="line">interface Converter&lt;F, T&gt; &#123;</span><br><span class="line">    T convert(F from);</span><br><span class="line">&#125;</span><br><span class="line">Converter&lt;String, Integer&gt; converter = (from) -&gt; Integer.valueOf(from);</span><br><span class="line">Integer converted = converter.convert(&quot;123&quot;);</span><br><span class="line">System.out.println(converted);    // 123</span><br></pre></td></tr></table></figure>
 <h3 id="u65B9_u6CD5_u4E0E_u6784_u9020_u51FD_u6570_u7684_u5F15_u7528"><a href="#u65B9_u6CD5_u4E0E_u6784_u9020_u51FD_u6570_u7684_u5F15_u7528" class="headerlink" title="方法与构造函数的引用"></a>方法与构造函数的引用</h3><p>Java8允许使用::关键字来传递方法或者构造函数引用。方法的引用：前面的代码经过改造可以按如下的方法写，具体代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Converter&lt;String, Integer&gt; converter = Integer::valueOf;</span><br><span class="line">Integer converted = converter.convert(&quot;123&quot;);</span><br><span class="line">System.out.println(converted);   // 123</span><br></pre></td></tr></table></figure></p>
 <p>构造函数的引用具体示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">    String firstName;</span><br><span class="line">    String lastName;</span><br><span class="line">    Person() &#123;&#125;</span><br><span class="line">    Person(String firstName, String lastName) &#123;</span><br><span class="line">        this.firstName = firstName;</span><br><span class="line">        this.lastName = lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//创建Person对象的对象工厂接口</span><br><span class="line">interface PersonFactory&lt;P extends Person&gt; &#123;</span><br><span class="line">    P create(String firstName, String lastName);</span><br><span class="line">&#125;</span><br><span class="line">//具体构造函数的引用</span><br><span class="line">PersonFactory&lt;Person&gt; personFactory = Person::new;</span><br><span class="line">Person person = personFactory.create(&quot;Peter&quot;, &quot;Parker&quot;);</span><br></pre></td></tr></table></figure></p>
 <h1 id="u4E8C_u3001_u611F_u8C22"><a href="#u4E8C_u3001_u611F_u8C22" class="headerlink" title="二、感谢"></a>二、感谢</h1><p>java8的新特性很多，在这里只是对部分新特性进行探究，感谢<font color="#FF0000"><a href="https://www.cnblogs.com/wangkang0320/articles/6841524.html" target="_blank" rel="noopener">JDK1.8 十大新特性详解</a></font>颇丰。</p>
@@ -511,7 +512,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -533,7 +534,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -620,7 +621,7 @@ var _hmt = _hmt || [];
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.7k字</span>
+  <span class="post-count">博客全站共5.9k字</span>
 </div>
 
         
