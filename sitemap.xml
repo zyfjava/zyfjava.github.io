@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zyfjava.github.io/hello-github/</loc>
+    
+    <lastmod>2020-05-25T00:49:47.039Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zyfjava.github.io/on-java8/</loc>
     
     <lastmod>2020-01-08T00:51:44.884Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://zyfjava.github.io/SpringBoot-install-jar/</loc>
     
     <lastmod>2019-09-23T03:30:19.121Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zyfjava.github.io/hello-github/</loc>
-    
-    <lastmod>2019-09-23T03:30:03.666Z</lastmod>
     
   </url>
   
